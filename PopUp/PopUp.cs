@@ -6,8 +6,11 @@ namespace PopUp
 {
 	public class PopUp : ContentPage
 	{
-		public PopUp ()
+        Image img;
+
+        public PopUp ()
 		{
+            
             Button alert = new Button
             {
                 Text = "Teade",
@@ -36,7 +39,7 @@ namespace PopUp
                 HorizontalOptions = LayoutOptions.Center
             };
             alertQuest.Clicked += AlertQuest_Clicked;
-            Content = new StackLayout { Children = { alert, alertYesNo, alertList, alertQuest } };
+            Content = new StackLayout { Children = { alert, alertYesNo, alertList, alertQuest, } };
         }
 
         private async void AlertQuest_Clicked(object sender, EventArgs e)
@@ -48,6 +51,7 @@ namespace PopUp
         private async void AlertList_Clicked(object sender, EventArgs e)
         {
             var action = await DisplayActionSheet("Mida teha?", "Loobu", "Kustutada", "Tantsida", "Laulda", "Joonistada");
+             
         }
 
         private async void AlertYesNo_Clicked(object sender, EventArgs e)

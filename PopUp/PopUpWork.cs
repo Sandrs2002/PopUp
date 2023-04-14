@@ -36,7 +36,7 @@ namespace PopUp
             ei.Clicked += Ei_Clicked;
             Button sm = new Button
             {
-                Text = "Servant/Master",
+                Text = "Buy/Sell",
                 VerticalOptions = LayoutOptions.Start,
                 HorizontalOptions = LayoutOptions.Center,
                 BackgroundColor = Color.Purple
@@ -62,9 +62,9 @@ namespace PopUp
 
         private async void Sm_Clicked(object sender, EventArgs e)
         {
-            bool result = await DisplayAlert("Servant/Master", "Which of these two antonyms you want to learn about first?", "Servant", "Master");
-            await DisplayAlert("Meaning", "Your word was: " + (result ? "Servant" + " " +
-                "-" + " " + "A person who performs duties for others(прислуга)" : "Master" + " " + "-" + " " + "A man who has people working for him(мастер)"), "OK");
+            bool result = await DisplayAlert("Buy/Sell", "Which of these two antonyms you want to learn about first?", "Buy", "Sell");
+            await DisplayAlert("Meaning", "Your word was: " + (result ? "Buy" + " " +
+                "-" + " " + "Obtain in exchange for payment(покупать)" : "Sell" + " " + "-" + " " + "Give or hand over (something) in exchange for money(продавать)"), "OK");
         }
 
         private async void Ei_Clicked(object sender, EventArgs e)
